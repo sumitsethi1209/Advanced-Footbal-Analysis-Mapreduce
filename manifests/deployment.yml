@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "testkubercluster"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "testkubercluster"
+    spec:
+      containers:
+        - name: "testkubercluster"
+          image: "testcontainerregistry1209.azurecr.io/testkubercluster"
+          ports:
+          - containerPort: 80
